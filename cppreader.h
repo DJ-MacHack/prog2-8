@@ -12,7 +12,7 @@
 class cppreader {
 public:
     cppreader(int args, char *argv[]);
-    int countlines();
+    void countlines();
     void countcommentlines(std::string input);
     double calcPercentage();
     void countCapitals(char input);

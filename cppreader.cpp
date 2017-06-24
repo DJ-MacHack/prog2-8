@@ -27,7 +27,7 @@ cppreader::cppreader(int args, char *argv[]) {
  * countlines and runs every other counter
  * @return
  */
-int cppreader::countlines() {
+void cppreader::countlines() {
     for (int i = 1; i < this->docs; i++) {
         this->lines = this->comments = this->digits = this->minors = this->capitals = 0;
         std::ifstream inFile(this->args[i]);
