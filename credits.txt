@@ -1,5 +1,5 @@
-Copyright by DJ MacHack and Julian Bruna
-2017
+Copyright by Hendrik Haas and Julian Bruna		
+2017							
                                                         
                                                         
                           .,.                           
@@ -11,7 +11,7 @@ Copyright by DJ MacHack and Julian Bruna
          .;c:oOkc;;;.    '.'ONWMMM0XOl0NNWWMMMW;        
         ;KWW0k0XNX0kdl:lkk,ONWMMMMN0.K0;,od':ll.  ,     
        :0Xo.    'ckXWNXOxXXWWMMMMMMk .:loc'     ..l     
-     'kN0.          'dKWWW0KXXOkOMMN;          .,'c     
+     'kN0.          'dKWWW0KXXQkOMMN;          .,'c     
     ,,O0.              :0Wo,dOO0XWMMKo.       ;x.o.     
     .;;.                 ll:dkOxx0WMWXx:.    :O',o      
                        .  '...  codk0MXkx. .oO:,d.      
