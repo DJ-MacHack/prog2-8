@@ -18,7 +18,7 @@ public:
     void countCapitals(char input);
     void countMinors(char input);
     void countDigits(char input);
-
+    void writeConsole(int i);
 private:
     char** args;
     int lines, comments, digits, capitals, minors, docs = 0;
