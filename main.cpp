@@ -1,6 +1,11 @@
 #include <iostream>
-
+#include "cppreader.h"
+/*
+// comment me
+// me 2
+*/
 int main(int argc, char *argv[]) {
-    std::cout << "Hello, World!" << std::endl;
+    cppreader reader(argc, argv);
+    reader.countlines();
     return 0;
 }

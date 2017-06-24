@@ -10,7 +10,19 @@
 
 
 class cppreader {
+public:
+    cppreader(int args, char *argv[]);
+    int countlines();
+    void countcommentlines(std::string input);
+    double calcPercentage();
+    void countCapitals(char input);
+    void countMinors(char input);
+    void countDigits(char input);
 
+private:
+    char** args;
+    int lines, comments, digits, capitals, minors, docs = 0;
+    int toASCII(char c);
 };
 
 
