@@ -29,25 +29,45 @@ cppreader::cppreader(int args, char *argv[]) {
  */
 void cppreader::countlines() {
     for (int i = 1; i < this->docs; i++) {
-        this->lines = this->comments = this->digits = this->minors = this->capitals = 0;
-        std::ifstream inFile(this->args[i]);
-        std::string input = "";
-        if (inFile.is_open()) {
-            while (getline(inFile, input)) {
-                this->lines++;
-                this->countcommentlines(input);
-                for(int j = 0; j < input.size(); j++) {
-                    this->countCapitals(input.at(j));
-                    this->countDigits(input.at(j));
-                    this->countMinors(input.at(j));
+        if (checkFile(this->args[i])) {
+            this->lines = this->comments = this->digits = this->minors = this->capitals = 0;
+            std::ifstream inFile(this->args[i]);
+            std::string input = "";
+            if (inFile.is_open()) {
+                while (getline(inFile, input)) {
+                    this->lines++;
+                    this->countcommentlines(input);
+                    for (int j = 0; j < input.size(); j++) {
+                        this->countCapitals(input.at(j));
+                        this->countDigits(input.at(j));
+                        this->countMinors(input.at(j));
+                    }
                 }
+                inFile.close();
+            } else {
+                std::cout << "Datei " << this->args[i] << " kann nicht geoeffnet werden!" << std::endl;
             }
-            inFile.close();
+            this->writeConsole(i);
         } else {
-            std::cout << "Datei " << this->args[i] << " kann nicht geoeffnet werden!" << std::endl;
+            cout << "Datei " << this->args[i] << " ist keine .cpp Datei!" << endl;
         }
-        this->writeConsole(i);
     }
+}
+
+/**
+ * checks for .cpp
+ * @param input
+ * @return
+ */
+bool cppreader::checkFile(std::string input) {
+    int length= input.size();
+    if(length > 4){
+        if(input.at(length-1) == 'p' && input.at(length-2) == 'p' && input.at(length-3) == 'c' && input.at(length-4) == '.')
+        {
+            return true;
+        }
+    }
+    return false;
 }
 
 /**

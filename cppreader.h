@@ -15,6 +15,7 @@ public:
     void countlines();
 private:
     char** args;
+    bool checkFile(std::string input);
     double calcPercentage();
     void countCapitals(char input);
     void countMinors(char input);
