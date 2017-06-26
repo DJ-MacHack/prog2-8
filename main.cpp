@@ -34,14 +34,13 @@ vector<string> split(string eingabe, char sucher) {
 void credits() {
     std::ifstream inFile ("credits.txt");
     std::string input = "";
-    //inFile.open("credits.txt");
     if (inFile.is_open()) {
         while (getline (inFile,input)) {
-            if(input.find("Q") != std::string::npos){   //Ausgabe von find wenn nichts gefunden wird
+            if(input.find("Q") != std::string::npos){   //find does not find?
                 std::vector<std::string> vector = split(input, 'Q');    //split
                 int teile = vector.size();
                 for(int i = 0; i < teile; i++){
-                    if(vector.at(i)=="Q") {     //nur Q soll rot sein
+                    if(vector.at(i)=="Q") {     //red Q
 //                        HANDLE handle = GetStdHandle(STD_OUTPUT_HANDLE);
 //                        SetConsoleTextAttribute(handle, FOREGROUND_RED);
                         cout << "\x1B[40m\x1B[5m\x1B[31m" + vector.at(i);
@@ -59,11 +58,11 @@ void credits() {
 //                                                FOREGROUND_BLUE);
                 std::cout << "\x1B[40m\x1B[37m"+input << std::endl;
             }
-        }       //Datei schließen
+        }
         cout << "\x1B[0m" <<endl;
         inFile.close();
     } else {
-        cout << "Datei kann nicht geoeffnet werden!";
+        cout << "Datei credits.txt kann nicht geoeffnet werden!";
     }
 }
 

@@ -13,14 +13,14 @@ class cppreader {
 public:
     cppreader(int args, char *argv[]);
     void countlines();
-    void countcommentlines(std::string input);
+private:
+    char** args;
     double calcPercentage();
     void countCapitals(char input);
     void countMinors(char input);
     void countDigits(char input);
     void writeConsole(int i);
-private:
-    char** args;
+    void countcommentlines(std::string input);
     int lines, comments, digits, capitals, minors, docs = 0;
     int toASCII(char c);
 };

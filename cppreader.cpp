@@ -44,7 +44,7 @@ void cppreader::countlines() {
             }
             inFile.close();
         } else {
-            std::cout << "Datei kann nicht geoeffnet werden!" << std::endl;
+            std::cout << "Datei " << this->args[i] << " kann nicht geoeffnet werden!" << std::endl;
         }
         this->writeConsole(i);
     }
@@ -60,7 +60,7 @@ void cppreader::countcommentlines(std::string input) {
     }
     if (input.at(0) == '/' && input.at(1) == '/') {
         this->comments++;
-    } else {
+    } /*else {
         if (input.at(0) == '/' && input.at(1) == '*') {
             this->comments++;
         } else {
@@ -68,7 +68,7 @@ void cppreader::countcommentlines(std::string input) {
                 this->comments++;
             }
         }
-    }
+    }*/
 }
 
 /**
